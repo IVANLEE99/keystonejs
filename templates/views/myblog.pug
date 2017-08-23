@@ -1,0 +1,11 @@
+extends ../layouts/default
+
+block content
+	| 我的博客
+	| #{JSON.stringify(blog)}
+	div
+		if blog && blog.length
+			ul
+				each b,i in blog
+					li
+						a(href='')=b.title

@@ -47,9 +47,15 @@ var Types = keystone.Field.Types;
 	// nocreate Boolean	禁止在Keystone管理界面中创建列表的新条目。
 	// nodelete Boolean	禁止在Keystone管理界面中删除列表中的条目。
 	// hidden Boolean	在Keystone管理界面中隐藏这个列表。
+	// 
+	// map:带连接的字段
+	// autokey  就是自增的值， path： 自增值得名称
+	// label keystone后台显示的名称
 var Post = new keystone.List('Post', {
 	map: { name: 'title' },
-	autokey: { path: 'slug', from: 'title', unique: true }
+	autokey: { path: 'slug', from: 'title', unique: true },
+	label:'labellllllllllllllll',
+	track:true
 });
 
 Post.add({
