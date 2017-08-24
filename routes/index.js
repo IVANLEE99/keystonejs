@@ -41,6 +41,12 @@ exports = module.exports = function (app) {
 	app.all('/contact', routes.views.contact);
 
 	app.get('/myblog', routes.views.myblog);
+	app.get('/myblog/add', routes.views.addmyblog);
+	//创建博客
+	app.post('/myblog_new', routes.views.myblog_new);
+	//查看博客详情
+	app.get('/myblog_detail/:id', routes.views.myblog_detail);
+	//myblog_new
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
 

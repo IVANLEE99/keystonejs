@@ -1,11 +1,17 @@
 extends ../layouts/default
 
 block content
-	| 我的博客
-	| #{JSON.stringify(blog)}
-	div
-		if blog && blog.length
-			ul
-				each b,i in blog
-					li
-						a(href='')=b.title
+	.container
+		| 我的博客
+		| #{JSON.stringify(blog)}
+		hr
+		div
+			a.btn.btn-default(href='/myblog/add') 新增
+			hr
+			if blog && blog.length
+				ul
+					each b,i in blog
+						li
+							a(href='/myblog_detail/'+b._id)=b.title
+							a.btn
+							hr
