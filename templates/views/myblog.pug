@@ -13,5 +13,6 @@ block content
 					each b,i in blog
 						li
 							a(href='/myblog_detail/'+b._id)=b.title
-							a.btn
+							a.pull-right(href='/myblog/remove/'+b._id) 删除
+							a.pull-right(href='/myblog/modify/'+b._id) 修改
 							hr

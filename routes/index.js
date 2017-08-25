@@ -46,6 +46,14 @@ exports = module.exports = function (app) {
 	app.post('/myblog_new', routes.views.myblog_new);
 	//查看博客详情
 	app.get('/myblog_detail/:id', routes.views.myblog_detail);
+	//删除博客
+	app.get('/myblog/remove/:id', routes.views.myblog_remove);
+	//修改博客页面
+	app.get('/myblog/modify/:id', routes.views.myblog_modify_page);
+
+	//修改博客
+	app.post('/myblog_modify', routes.views.myblog_modify);
+
 	//myblog_new
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
